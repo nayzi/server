@@ -9,7 +9,7 @@ require_once '../classes/API.php';
 API::init('../classes/', array(
     'type' => 'mysql',
     'name' => 'pasc-db',
-    'user' => 'admin',
+    'user' => 'root',
     'pwd' => 'cinetic',
     'host' => 'localhost'
 ));
