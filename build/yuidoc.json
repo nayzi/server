@@ -1,7 +1,7 @@
 {
     "name": "PASC API",
     "description": "PASC : Plateforme d'aide à la saisie des convoyeurs",
-    "url": "http://192.168.1.49/pasc-server-latest",
+    "url": "http://192.168.1.49/server",
     "version": "0.0.1-beta.1",
     "options": {
         "linkNatives": false,
