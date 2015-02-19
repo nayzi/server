@@ -125,8 +125,7 @@
             <arg value="tests"/>
         </exec>
     </target>
- <property xxx="${SFTP_USR}:${SFTP_PWD}@${SFTP_HOST}:${ROOT_WWW}/${DEST_FOLDER}"/>
-    <target name="upload_files" description="Deploy files to server at ${xxx}">
+    <target name="upload_files" description="Deploy files to server at ${DEST_FOLDER}">
         <echo>Deploy files to server at "${DEST_FOLDER}"</echo>
         <scp todir="${SFTP_USR}:${SFTP_PWD}@${SFTP_HOST}:${ROOT_WWW}/${DEST_FOLDER}" trust="true" sftp="true">
             <fileset dir="${basedir}/src"/>
