@@ -64,13 +64,13 @@ class Order extends Item implements \JsonSerializable {
     protected $climat = 0;
 
     /**
-     * Numéro BPE
-     * @property bpe
+     * Numéro OTP
+     * @property OTP
      * @protected
      * @type string
      * @default 
      */
-    protected $bpe = "";
+    protected $OTP = "";
 
     /**
      * Nom du dessinateur
@@ -193,17 +193,17 @@ class Order extends Item implements \JsonSerializable {
      * @param {Integer} dealId ID de l'affaire
      * @param {Integer} conveyorTypeId ID du type de convoyeur
      * @param {Integer} climatId ID du climat
-     * @param {String} bpe Numéro BPE
+     * @param {String} OTP Numéro OTP
      * @param {String} drawerName Nom du dessinateur
      * @param {String} plan Numéro de plan
      * @return {Logics.Response}
      */
-    public static function create($dealId, $conveyorTypeId, $climatId, $bpe, $drawerName, $plan) {
+    public static function create($dealId, $conveyorTypeId, $climatId, $OTP, $drawerName, $plan) {
         $result = new Response();
 
-        $newId = \DB\DBInterface::get()->execute('call Orders_create(:id, :deal, :conveyorType, :climat, :bpe, :drawerName, :plan);', array(
+        $newId = \DB\DBInterface::get()->execute('call Orders_create(:id, :deal, :conveyorType, :climat, :OTP, :drawerName, :plan);', array(
             ':id' => Session::getUser()->getId(), ':deal' => $dealId, ':conveyorType' => $conveyorTypeId, ':climat' => $climatId,
-            ':bpe' => $bpe, ':drawerName' => $drawerName, ':plan' => $plan
+            ':OTP' => $OTP, ':drawerName' => $drawerName, ':plan' => $plan
         ));
 
         if ($newId['id'] > 0) {
@@ -226,12 +226,12 @@ class Order extends Item implements \JsonSerializable {
      * @static
      * @param {Integer} orderId ID du bon de commande
      * @param {Integer} climatId ID du climat
-     * @param {String} bpe Numéro BPE
+     * @param {String} OTP Numéro OTP
      * @param {String} drawerName Nom du dessinateur
      * @param {String} plan Numéro de plan
      * @return {Logics.Response}
      */
-    public static function update($orderId, $climatId, $bpe, $drawerName, $plan) {
+    public static function update($orderId, $climatId, $OTP, $drawerName, $plan) {
         
     }
 
@@ -267,7 +267,7 @@ class Order extends Item implements \JsonSerializable {
             'deal' => $this->deal,
             'conveyorType' => $this->conveyorType,
             'climat' => $this->climat,
-            'bpe' => $this->bpe,
+            'OTP' => $this->OTP,
             'drawerName' => $this->drawerName,
             'plan' => $this->plan,
             'createdBy' => $this->createdBy,
@@ -353,21 +353,21 @@ class Order extends Item implements \JsonSerializable {
     }
 
     /**
-     * Retourne la propriété {{#crossLink "Logics.Order/bpe:property"}}{{/crossLink}}
-     * @method getBpe
-     * @return {String} Numéro BPE 
+     * Retourne la propriété {{#crossLink "Logics.Order/OTP:property"}}{{/crossLink}}
+     * @method getOTP
+     * @return {String} Numéro OTP 
      */
-    public function getBpe() {
-        return $this->bpe;
+    public function getOTP() {
+        return $this->OTP;
     }
 
     /**
-     * Met à jour la propriété {{#crossLink "Logics.Order/bpe:property"}}{{/crossLink}}
-     * @method setBpe
-     * @param {String} newBpe Nouveau numéro BPE
+     * Met à jour la propriété {{#crossLink "Logics.Order/OTP:property"}}{{/crossLink}}
+     * @method setOTP
+     * @param {String} newOTP Nouveau numéro OTP
      */
-    public function setBpe($newBpe) {
-        $this->bpe = $newBPE;
+    public function setOTP($newOTP) {
+        $this->OTP = $newOTP;
     }
 
     /**
