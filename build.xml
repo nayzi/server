@@ -128,13 +128,13 @@
  
     <target name="upload_files" description="Deploy files to server at ${DEST_FOLDER}">
         <echo>Deploy files to server at ${DEST_FOLDER}</echo>
-        <scp todir="www:${SFTP_PWD}@${SFTP_HOST}:${ROOT_WWW}/${DEST_FOLDER}" trust="true" sftp="true">
+        <scp todir="${SFTP_USR}:${SFTP_PWD}@${SFTP_HOST}:${ROOT_WWW}/${DEST_FOLDER}" trust="true" sftp="true">
             <fileset dir="${basedir}/src"/>
         </scp>
     </target>
  
     <target name="update_doc" description="Serve php documentation to the user">
-        <scp todir="www:${SFTP_PWD}@${SFTP_HOST}:${ROOT_WWW}/docs/${DEST_FOLDER}" trust="true" sftp="true" verbose="false">
+        <scp todir="${SFTP_USR}:${SFTP_PWD}@${SFTP_HOST}:${ROOT_WWW}/docs/${DEST_FOLDER}" trust="true" sftp="true" verbose="false">
             <fileset dir="${basedir}/build/phpdoc"/>
         </scp>
     </target>
