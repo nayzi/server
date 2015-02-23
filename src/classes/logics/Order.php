@@ -70,7 +70,7 @@ class Order extends Item implements \JsonSerializable {
      * @type string
      * @default 
      */
-    protected $OTP = "";
+    protected $otp = "";
 
     /**
      * Nom du dessinateur
@@ -198,12 +198,12 @@ class Order extends Item implements \JsonSerializable {
      * @param {String} plan Numéro de plan
      * @return {Logics.Response}
      */
-    public static function create($dealId, $conveyorTypeId, $climatId, $OTP, $drawerName, $plan) {
+    public static function create($dealId, $conveyorTypeId, $climatId, $otp, $drawerName, $plan) {
         $result = new Response();
 
-        $newId = \DB\DBInterface::get()->execute('call Orders_create(:id, :deal, :conveyorType, :climat, :OTP, :drawerName, :plan);', array(
+        $newId = \DB\DBInterface::get()->execute('call Orders_create(:id, :deal, :conveyorType, :climat, :otp, :drawerName, :plan);', array(
             ':id' => Session::getUser()->getId(), ':deal' => $dealId, ':conveyorType' => $conveyorTypeId, ':climat' => $climatId,
-            ':OTP' => $OTP, ':drawerName' => $drawerName, ':plan' => $plan
+            ':otp' => $otp, ':drawerName' => $drawerName, ':plan' => $plan
         ));
 
         if ($newId['id'] > 0) {
@@ -231,7 +231,7 @@ class Order extends Item implements \JsonSerializable {
      * @param {String} plan Numéro de plan
      * @return {Logics.Response}
      */
-    public static function update($orderId, $climatId, $OTP, $drawerName, $plan) {
+    public static function update($orderId, $climatId, $otp, $drawerName, $plan) {
         
     }
 
@@ -267,7 +267,7 @@ class Order extends Item implements \JsonSerializable {
             'deal' => $this->deal,
             'conveyorType' => $this->conveyorType,
             'climat' => $this->climat,
-            'OTP' => $this->OTP,
+            'otp' => $this->otp,
             'drawerName' => $this->drawerName,
             'plan' => $this->plan,
             'createdBy' => $this->createdBy,
@@ -358,7 +358,7 @@ class Order extends Item implements \JsonSerializable {
      * @return {String} Numéro OTP 
      */
     public function getOTP() {
-        return $this->OTP;
+        return $this->otp;
     }
 
     /**
@@ -367,7 +367,7 @@ class Order extends Item implements \JsonSerializable {
      * @param {String} newOTP Nouveau numéro OTP
      */
     public function setOTP($newOTP) {
-        $this->OTP = $newOTP;
+        $this->otp = $newOTP;
     }
 
     /**
