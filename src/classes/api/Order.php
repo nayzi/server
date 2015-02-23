@@ -99,7 +99,7 @@ class Order implements ItemCreatable, ItemUpdatable, ItemDeletable {
             return \Utils::patchJson(\Logics\ErrorMessage::get(0));
         }
         
-        $result = \Logics\Order::create($order['deal'], $order['conveyorType'], $order['climat'], $order['OTP'], $order['drawerName'], $order['plan']);
+        $result = \Logics\Order::create($order['deal'], $order['conveyorType'], $order['climat'], $order['otp'], $order['drawerName'], $order['plan']);
 
         if ($result->isValid()) {
             $data = new Wrapper('order', $result->getData());

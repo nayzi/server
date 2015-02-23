@@ -64,8 +64,8 @@ class Order extends Item implements \JsonSerializable {
     protected $climat = 0;
 
     /**
-     * Numéro OTP
-     * @property OTP
+     * Numéro otp
+     * @property otp
      * @protected
      * @type string
      * @default 
@@ -193,7 +193,7 @@ class Order extends Item implements \JsonSerializable {
      * @param {Integer} dealId ID de l'affaire
      * @param {Integer} conveyorTypeId ID du type de convoyeur
      * @param {Integer} climatId ID du climat
-     * @param {String} OTP Numéro OTP
+     * @param {String} otp Numéro otp
      * @param {String} drawerName Nom du dessinateur
      * @param {String} plan Numéro de plan
      * @return {Logics.Response}
@@ -226,7 +226,7 @@ class Order extends Item implements \JsonSerializable {
      * @static
      * @param {Integer} orderId ID du bon de commande
      * @param {Integer} climatId ID du climat
-     * @param {String} OTP Numéro OTP
+     * @param {String} otp Numéro otp
      * @param {String} drawerName Nom du dessinateur
      * @param {String} plan Numéro de plan
      * @return {Logics.Response}
@@ -353,21 +353,21 @@ class Order extends Item implements \JsonSerializable {
     }
 
     /**
-     * Retourne la propriété {{#crossLink "Logics.Order/OTP:property"}}{{/crossLink}}
-     * @method getOTP
-     * @return {String} Numéro OTP 
+     * Retourne la propriété {{#crossLink "Logics.Order/otp:property"}}{{/crossLink}}
+     * @method getotp
+     * @return {String} Numéro otp 
      */
-    public function getOTP() {
+    public function getotp() {
         return $this->otp;
     }
 
     /**
-     * Met à jour la propriété {{#crossLink "Logics.Order/OTP:property"}}{{/crossLink}}
-     * @method setOTP
-     * @param {String} newOTP Nouveau numéro OTP
+     * Met à jour la propriété {{#crossLink "Logics.Order/otp:property"}}{{/crossLink}}
+     * @method setotp
+     * @param {String} newotp Nouveau numéro otp
      */
-    public function setOTP($newOTP) {
-        $this->otp = $newOTP;
+    public function setotp($newotp) {
+        $this->otp = $newotp;
     }
 
     /**
