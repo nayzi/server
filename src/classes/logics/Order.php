@@ -262,6 +262,7 @@ class Order extends Item implements \JsonSerializable {
 
     // Implémentation de la méthode jsonSerialize de l'interface JsonSerializable
     public function jsonSerialize() {
+
         return array(
             'id' => $this->id,
             'deal' => $this->deal,
@@ -273,7 +274,7 @@ class Order extends Item implements \JsonSerializable {
             'createdBy' => $this->createdBy,
             'createdAt' => Utils::getDate($this->createdAt),
             'lastEditedBy' => $this->lastEditedBy,
-            'lastEditedAt' => Utils::getDate($this->lastEditedAt),
+            'lastEditedAt' => $this->lastEditedAt,
             'conveyors' => $this->conveyors,
             'options' => $this->options,
             'orderPieces' => $this->orderPieces
