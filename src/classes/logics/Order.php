@@ -273,7 +273,7 @@ class Order extends Item implements \JsonSerializable {
             'createdBy' => $this->createdBy,
             'createdAt' => Utils::getDate($this->createdAt),
             'lastEditedBy' => $this->lastEditedBy,
-            'lastEditedAt' => "Utils::getDate($this->lastEditedAt)",
+            'lastEditedAt' => Utils::getDate($this->lastEditedAt),
             'conveyors' => $this->conveyors,
             'options' => $this->options,
             'orderPieces' => $this->orderPieces
