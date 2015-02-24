@@ -63,6 +63,8 @@ class Utils {
      * @return {String} Date au format ISO-8601
      */
     public static function getDate($strDate) {
-        return date('c', strtotime($strDate));
+        var d =date('c', strtotime($strDate));
+        if d==(date('c', null)) d= "pas encore";
+        return d;
     }
 }
