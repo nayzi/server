@@ -211,5 +211,22 @@ class OrderPiece extends Item implements \JsonSerializable {
     public function setIsComputed($newIsComputed) {
         $this->isComputed = $newIsComputed;
     }
+    /**
+     * Retourne la propriété {{#crossLink "Logics.OrderPiece/isComputed:property"}}{{/crossLink}}
+     * @method getIsComputed
+     * @return {Integer} Indique si c'est une commande automatique
+     */
+    public function getOptions() {
+        return $this->options;
+    }
+
+    /**
+     * Met à jour la propriété {{#crossLink "Logics.OrderPiece/isComputed:property"}}{{/crossLink}}
+     * @method setIsComputed
+     * @param {Integer} newIsComputed Nouvelle indication de commande automatique
+     */
+    public function setOptions($newOptions) {
+        $this->isComputed = $newOptions;
+    }
 
 }
