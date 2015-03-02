@@ -217,7 +217,7 @@ class OrderPiece extends Item implements \JsonSerializable {
      * @return {Integer} Indique si c'est une commande automatique
      */
     public function getOrderPieceOptions() {
-        alert("hadi :"+$this->orderPieceOptions);
+        
         return $this->orderPieceOptions;
     }
 
