@@ -64,10 +64,7 @@ getApi()->get('/orderPieceOptions/(\d+)', array('\API\OrderPieceOption', 'getIte
 getApi()->post('/orderOptions', array('\API\OrderOption', 'create'), EpiApi::external);
 getApi()->get('/orderOptions', array('\API\OrderOption', 'getItems'), EpiApi::external);
 getApi()->get('/orderOptions/(\d+)', array('\API\OrderOption', 'getItem'), EpiApi::external);
-//option types
-getApi()->post('/optionTypes', array('\API\optionType', 'create'), EpiApi::external);
-getApi()->get('/optionTypes', array('\API\optionType', 'getItems'), EpiApi::external);
-getApi()->get('/optionTypes/(\d+)', array('\API\optionType', 'getItem'), EpiApi::external);
+
 // Options d'un convoyeur
 getApi()->post('/conveyorOptions', array('\API\ConveyorOption', 'create'), EpiApi::external);
 getApi()->get('/conveyorOptions', array('\API\ConveyorOption', 'getItems'), EpiApi::external);
