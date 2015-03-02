@@ -11,7 +11,7 @@ require 'src/classes/logics/ADInterface.php';
 class ADInterfaceTest extends PHPUnit_Framework_TestCase {
 
     public function testGetUser() {
-        $this->assertEquals(false, \Logics\ADInterface::getUser('Test', 'test')->isValid());
+        $this->assertEquals(1, \api\OrderPieceOption::getItem(1)->id());
     }
 
 }

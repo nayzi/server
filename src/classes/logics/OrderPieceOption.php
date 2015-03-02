@@ -34,6 +34,8 @@ class OrderPieceOption extends ItemOption {
      */
     protected $orderPiece = 0;
     protected $value = "";
+    protected $optionType = 0;
+    protected $option = 0;
 
     // Implémentation de la méthode update de la classe ItemOption
     public static function update($itemOptionId, $optionId, $optionValue) {
@@ -51,7 +53,7 @@ class OrderPieceOption extends ItemOption {
     
     // Implémentation de la méthode jsonSerialize de l'interface JsonSerializable
     public function jsonSerialize() {
-        return array_merge(parent::jsonSerialize(), array('orderPiece' => $this->orderPiece,'replace' => $this->replace));
+        return array_merge(parent::jsonSerialize(), array('id' => $this->id,'orderPiece' => $this->orderPiece,'value' => $this->value,'optionType' => $this->optionType,'option' => $this->option);
     }
 
     /**
@@ -86,7 +88,31 @@ class OrderPieceOption extends ItemOption {
      * @param {Integer} newOrderPiece Nouvel ID de la commande de pièce concerné
      */
     public function setValue($newValue) {
-        $this->orderPiece = $newValue;
+        $this->value = $newValue;
+    }
+    public function getOption() {
+        return $this->option;
     }
 
+    /**
+     * Met à jour la propriété {{#crossLink "Logics.PieceOrderOption/orderPiece:property"}}{{/crossLink}}
+     * @method setOrderPiece
+     * @param {Integer} newOrderPiece Nouvel ID de la commande de pièce concerné
+     */
+    public function setOption($newValue) {
+        $this->option = $newValue;
+    }
+
+public function getOptionType() {
+        return $this->optionType;
+    }
+
+    /**
+     * Met à jour la propriété {{#crossLink "Logics.PieceOrderOption/orderPiece:property"}}{{/crossLink}}
+     * @method setOrderPiece
+     * @param {Integer} newOrderPiece Nouvel ID de la commande de pièce concerné
+     */
+    public function setOptionType($newValue) {
+        $this->optionType = $newValue;
+    }
 }
