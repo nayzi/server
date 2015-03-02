@@ -33,6 +33,7 @@ class OrderPieceOption extends ItemOption {
      * @default 0
      */
     protected $orderPiece = 0;
+    protected $value = "";
 
     // Implémentation de la méthode update de la classe ItemOption
     public static function update($itemOptionId, $optionId, $optionValue) {
@@ -50,7 +51,7 @@ class OrderPieceOption extends ItemOption {
     
     // Implémentation de la méthode jsonSerialize de l'interface JsonSerializable
     public function jsonSerialize() {
-        return array_merge(parent::jsonSerialize(), array('orderPiece' => $this->orderPiece));
+        return array_merge(parent::jsonSerialize(), array('orderPiece' => $this->orderPiece,'replace' => $this->replace));
     }
 
     /**
@@ -69,6 +70,23 @@ class OrderPieceOption extends ItemOption {
      */
     public function setOrderPiece($newOrderPiece) {
         $this->orderPiece = $newOrderPiece;
+    }
+        /**
+     * Retourne la propriété {{#crossLink "Logics.PieceOrderOption/orderPiece:property"}}{{/crossLink}}
+     * @method getOrderPiece
+     * @return {Integer} ID de la commande de pièce concerné
+     */
+    public function getValue() {
+        return $this->value;
+    }
+
+    /**
+     * Met à jour la propriété {{#crossLink "Logics.PieceOrderOption/orderPiece:property"}}{{/crossLink}}
+     * @method setOrderPiece
+     * @param {Integer} newOrderPiece Nouvel ID de la commande de pièce concerné
+     */
+    public function setValue($newValue) {
+        $this->orderPiece = $newValue;
     }
 
 }

@@ -43,12 +43,14 @@ class OptionType extends Item implements \JsonSerializable {
      * @type string
      */
     protected $label = "";
+    protected $replace = "";
 
     // Implémentation de la méthode jsonSerialize de l'interface JsonSerializable
     public function jsonSerialize() {
         return array(
             'id' => $this->id,
-            'label' => $this->label
+            'label' => $this->label,
+            'replace' => $this->replace
         );
     }
 
@@ -86,6 +88,23 @@ class OptionType extends Item implements \JsonSerializable {
      */
     public function setLabel($newLabel) {
         $this->label = $newLabel;
+    }
+        /**
+     * Retourne la propriété {{#crossLink "Logics.OptionType/label:property"}}{{/crossLink}}
+     * @method getLabel
+     * @return {String} Label du type d'option
+     */
+    public function getReplace() {
+        return $this->label;
+    }
+
+    /**
+     * Met à jour la propriété {{#crossLink "Logics.OptionType/label:property"}}{{/crossLink}}
+     * @method setLabel
+     * @param {String} newLabel Nouveau label du type d'option
+     */
+    public function setReplace($newReplace) {
+        $this->label = $newReplace;
     }
 
 }
