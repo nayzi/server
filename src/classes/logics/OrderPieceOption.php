@@ -53,7 +53,7 @@ class OrderPieceOption extends ItemOption {
     
     // Implémentation de la méthode jsonSerialize de l'interface JsonSerializable
     public function jsonSerialize() {
-        return array_merge(parent::jsonSerialize(), array('id' => $this->id,'orderPiece' => $this->orderPiece,'value' => $this->value,'optionType' => $this->optionType,'option' => $this->option));
+        return array_merge(parent::jsonSerialize(), array('id' => $this->id,'orderPiece' => $this->orderPiece,'value' => $this->value,'optionType' => $this->optionType,'option' => $this->option);
     }
 
     /**
