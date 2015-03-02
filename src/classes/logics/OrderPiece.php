@@ -226,7 +226,7 @@ class OrderPiece extends Item implements \JsonSerializable {
      * @param {Integer} newIsComputed Nouvelle indication de commande automatique
      */
     public function setOptions($newOptions) {
-        $this->isComputed = $newOptions;
+        $this->options = $newOptions;
     }
 
 }
