@@ -70,7 +70,7 @@ class OrderPiece extends Item implements \JsonSerializable {
      * @type integer[]
      * @default []
      */
-    protected $orderPieceOptions = array();
+    protected $options = array();
 
     /**
      * Crée une commande de pièce (affecte la BDD)
@@ -124,8 +124,8 @@ class OrderPiece extends Item implements \JsonSerializable {
     }
     
     public function __construct() {
-        if (!is_array($this->orderPieceOptions)) {
-            $this->orderPieceOptions = is_null($this->orderPieceOptions) ? array() : explode(',', $this->orderPieceOptions);
+        if (!is_array($this->options)) {
+            $this->options = is_null($this->options) ? array() : explode(',', $this->options);
         }
     }
 
@@ -136,7 +136,7 @@ class OrderPiece extends Item implements \JsonSerializable {
             'order' => $this->order,
             'piece' => $this->piece,
             'isComputed' => $this->isComputed,
-            'orderPieceOptions' => $this->orderPieceOptions
+            'options' => $this->options
         );
     }
 
@@ -216,9 +216,9 @@ class OrderPiece extends Item implements \JsonSerializable {
      * @method getIsComputed
      * @return {Integer} Indique si c'est une commande automatique
      */
-    public function getOrderPieceOptions() {
+    public function getOptions() {
         
-        return $this->orderPieceOptions;
+        return $this->options;
     }
 
     /**
@@ -226,8 +226,8 @@ class OrderPiece extends Item implements \JsonSerializable {
      * @method setIsComputed
      * @param {Integer} newIsComputed Nouvelle indication de commande automatique
      */
-    public function setOrderPieceOptions($newOptions) {
-        $this->orderPieceOptions = $newOptions;
+    public function setOptions($newOptions) {
+        $this->options = $newOptions;
     }
 
 }
