@@ -64,7 +64,7 @@ class OrderPieceOption implements ItemCreatable, ItemUpdatable, ItemDeletable {
             $arrayData = $result->getData();
         }
 
-        return \Utils::patchJson(new Wrapper('orderPieceOption', $arrayData));
+        return \Utils::patchJson(new Wrapper('orderPieceOptions', $arrayData));
     }
 
     // Implémentation de la méthode create de la classe ItemCreatable
