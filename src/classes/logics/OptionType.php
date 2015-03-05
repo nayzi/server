@@ -95,7 +95,7 @@ class OptionType extends Item implements \JsonSerializable {
      * @return {String} Label du type d'option
      */
     public function getReplace() {
-        return $this->label;
+        return $this->replace;
     }
 
     /**
@@ -104,7 +104,7 @@ class OptionType extends Item implements \JsonSerializable {
      * @param {String} newLabel Nouveau label du type d'option
      */
     public function setReplace($newReplace) {
-        $this->label = $newReplace;
+        $this->replace = $newReplace;
     }
 
 }

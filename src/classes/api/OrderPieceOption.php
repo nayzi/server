@@ -77,7 +77,7 @@ class OrderPieceOption implements ItemCreatable, ItemUpdatable, ItemDeletable {
             return \Utils::patchJson(\Logics\ErrorMessage::get(0));
         }
         
-        $result = \Logics\OrderPieceOption::create($orderPieceOption['orderPiece'], $orderPieceOption['optionType'], $orderPieceOption['option'], $orderPieceOption['optionValue']);
+        $result = \Logics\OrderPieceOption::create($orderPieceOption['orderPiece'], $orderPieceOption['optionType'], $orderPieceOption['option'], $orderPieceOption['value']);
 
         if ($result->isValid()) {
             $data = new Wrapper('orderPieceOption', $result->getData());

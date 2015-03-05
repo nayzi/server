@@ -33,12 +33,12 @@ class OrderPieceOption extends ItemOption {
      * @default 0
      */
     protected $orderPiece = 0;
-    protected $value = "";
+    protected $opValue = "sss";
     protected $optionType = 0;
     protected $option = 0;
 
     // Implémentation de la méthode update de la classe ItemOption
-    public static function update($itemOptionId, $optionId, $optionValue) {
+    public static function update($itemOptionId, $optionId, $opValue) {
         $result = new Response();
 
         return $result;
@@ -53,7 +53,7 @@ class OrderPieceOption extends ItemOption {
     
     // Implémentation de la méthode jsonSerialize de l'interface JsonSerializable
     public function jsonSerialize() {
-        return array_merge(parent::jsonSerialize(), array('id' => $this->id,'orderPiece' => $this->orderPiece,'value' => $this->value,'optionType' => $this->optionType,'option' => $this->option));
+        return array_merge(parent::jsonSerialize(), array('id' => $this->id,'orderPiece' => $this->orderPiece,'opValue' => $this->opValue,'optionType' => $this->optionType,'option' => $this->option));
     }
 
     /**
@@ -78,8 +78,8 @@ class OrderPieceOption extends ItemOption {
      * @method getOrderPiece
      * @return {Integer} ID de la commande de pièce concerné
      */
-    public function getValue() {
-        return $this->value;
+    public function getOpValue() {
+        return $this->opValue;
     }
 
     /**
@@ -87,8 +87,8 @@ class OrderPieceOption extends ItemOption {
      * @method setOrderPiece
      * @param {Integer} newOrderPiece Nouvel ID de la commande de pièce concerné
      */
-    public function setValue($newValue) {
-        $this->value = $newValue;
+    public function setOpValue($newValue) {
+        $this->opValue = $newValue;
     }
     public function getOption() {
         return $this->option;
