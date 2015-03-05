@@ -16,7 +16,7 @@ API::init('../classes/', array(
 
 require_once '../libs/epiphany/Epi.php';
 Epi::setPath('base', '../libs/epiphany');
-Epi::setSetting('exceptions', !MODE_DEBUG);
+Epi::setSetting('exceptions', MODE_DEBUG);
 Epi::init('api');
 
 require_once 'routes.php';

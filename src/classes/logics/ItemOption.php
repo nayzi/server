@@ -58,7 +58,7 @@ abstract class ItemOption extends Item implements \JsonSerializable {
      * @protected
      * @type string
      */
-    protected $opValue = "";
+    protected $optionValue = "";
 
     /**
      * Crée une nouvelle définition d'option (affecte la BDD)
@@ -70,12 +70,12 @@ abstract class ItemOption extends Item implements \JsonSerializable {
      * @param {String} optionValue Valeur personnalisé de l'option
      * @return {Logics.Response}
      */
-    public static function create($itemId, $optionTypeId, $optionId, $opValue) {
+    public static function create($itemId, $optionTypeId, $optionId, $optionValue) {
         $result = new Response();
 
-        $newId = \DB\DBInterface::get()->execute('call ' . static::$itemTable . '_create(:item, :optionType, :option, :opValue);', array(
+        $newId = \DB\DBInterface::get()->execute('call ' . static::$itemTable . '_create(:item, :optionType, :option, :optionValue);', array(
             ':item' => $itemId, ':optionType' => $optionTypeId, ':option' => $optionId,
-            ':opValue' => $opValue
+            ':optionValue' => $optionValue
         ));
 
         if ($newId['id'] > 0) {
@@ -99,7 +99,7 @@ abstract class ItemOption extends Item implements \JsonSerializable {
      * @param {String} optionValue Valeur personnalisé de l'option
      * @return {Logics.Response}
      */
-    public abstract static function update($itemOptionId, $optionId, $opValue);
+    public abstract static function update($itemOptionId, $optionId, $optionValue);
 
     /**
      * Supprime un enregistrement (affecte la BDD)
@@ -116,7 +116,7 @@ abstract class ItemOption extends Item implements \JsonSerializable {
             'id' => $this->id,
             'optionType' => $this->optionType,
             'option' => $this->option,
-            'opValue' => $this->opValue
+            'optionValue' => $this->optionValue
         );
     }
 
@@ -179,8 +179,8 @@ abstract class ItemOption extends Item implements \JsonSerializable {
      * @method getOptionValue
      * @return {String} Valeur personnalisé de l'option
      */
-    public function getOpValue() {
-        return $this->opValue;
+    public function getOptionValue() {
+        return $this->optionValue;
     }
 
     /**
@@ -188,8 +188,8 @@ abstract class ItemOption extends Item implements \JsonSerializable {
      * @method setOptionValue
      * @param {String} newOptionValue Nouvelle valeur personnalisé de l'option
      */
-    public function setOpValue($newOptionValue) {
-        $this->opValue = $newOptionValue;
+    public function setOptionValue($newOptionValue) {
+        $this->optionValue = $newOptionValue;
     }
 
 }

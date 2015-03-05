@@ -324,6 +324,7 @@ class DBInterface {
             return $sth;
         } catch (\PDOException $e) {
             \PASCException::raise(new \PASCException("Query error: {$e->getMessage()} - {$sql}"));
+            console.log("erreuuuuur sth :"+$sth+"  params : "+$params);
             return false;
         }
     }
