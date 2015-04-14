@@ -118,6 +118,7 @@ class Deal implements ItemCreatable, ItemUpdatable, ItemDeletable {
         }
         
         $result = \Logics\Deal::delete($itemId);
+        
 
         if ($result->isValid()) {
             
