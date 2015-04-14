@@ -244,6 +244,13 @@ class Order extends Item implements \JsonSerializable {
      */
     public static function delete($orderId) {
         
+
+        \DB\DBInterface::get()->execute('call delete_order(:p_id);', array(
+            ':p_id' => $orderId
+        ));
+
+        
+        
     }
     
     public function __construct() {

@@ -118,6 +118,20 @@ class Order implements ItemCreatable, ItemUpdatable, ItemDeletable {
 
     // Implémentation de la méthode delete de la classe ItemDeletable
     public static function delete($itemId) {
+        if (!\Logics\Session::hasAccess(array(1, 2, 3, 4))) {
+            http_response_code(403);
+            return \Utils::patchJson(\Logics\ErrorMessage::get(0));
+        }
+        
+        $result = \Logics\Order::delete($itemId);
+
+        if ($result->isValid()) {
+            
+            http_response_code(201);
+        } else {
+            $data = $result->getErrors();
+        }
+
         
     }
 

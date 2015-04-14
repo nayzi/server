@@ -23,6 +23,7 @@ getApi()->get('/deals', array('\API\Deal', 'getItems'), EpiApi::external);
 getApi()->get('/deals/(\d+)', array('\API\Deal', 'getItem'), EpiApi::external);
 getApi()->post('/deals', array('\API\Deal', 'create'), EpiApi::external);
 getApi()->put('/deals/(\d+)', array('\API\Deal', 'update'), EpiApi::external);
+getApi()->delete('/deals/(\d+)', array('\API\Deal', 'delete'), EpiApi::external);
 // Climats
 getApi()->get('/climats', array('\API\Climat', 'getItems'), EpiApi::external);
 getApi()->get('/climats/(\d+)', array('\API\Climat', 'getItem'), EpiApi::external);
@@ -48,6 +49,7 @@ getApi()->get('/pieceAvailabilities/(\d+)', array('\API\PieceAvailability', 'get
 getApi()->post('/orders', array('\API\Order', 'create'), EpiApi::external);
 getApi()->get('/orders', array('\API\Order', 'getItems'), EpiApi::external);
 getApi()->get('/orders/(\d+)', array('\API\Order', 'getItem'), EpiApi::external);
+getApi()->delete('/orders/(\d+)', array('\API\Order', 'delete'), EpiApi::external);
 // Pièces pour un bon de commande
 getApi()->post('/orderPieces', array('\API\OrderPiece', 'create'), EpiApi::external);
 getApi()->get('/orderPieces', array('\API\OrderPiece', 'getItems'), EpiApi::external);

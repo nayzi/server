@@ -193,6 +193,13 @@ class Deal extends Item implements \JsonSerializable {
      */
     public static function delete($dealId) {
         
+
+        \DB\DBInterface::get()->execute('call delete_deal(:p_id);', array(
+            ':p_id' => $dealId
+        ));
+
+        
+        
     }
     
     /**
